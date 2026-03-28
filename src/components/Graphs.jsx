@@ -201,7 +201,7 @@ function Graphs() {
    <>
    <div className=' mt-5 px-6 md:px-18  py-8'>
     <span className='font-medium text-3xl'>You May Also Like</span>
-    <div className="flex gap-4">
+    <div className="flex gap-4 md:gap-24">
         <GraphBox
         logo={"https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/vectors/bnb-2c9adc7qw85po528q8y3b.png/bnb-tss7lyzvhxyjfc9ivae0l.png?_a=DATAiZAAZAA0"} 
         name={"BNB"}
@@ -230,21 +230,21 @@ function Graphs() {
         dollars={crypto?.cardano?.current_price ?? null}
         coinId="cardano"
         />
-         <GraphBox
+         {/* <GraphBox
          className={"hidden md:block"}
         logo={"https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/avalanche-avax-icon.png"} 
         name={"AVAX"}
         percentile={crypto?.bitcoin?.price_change_percentage_24h ?? null}
         dollars={crypto?.bitcoin?.current_price ?? null}
         coinId="bitcoin"
-        />
+        /> */}
     </div>
    </div>
 
 
    <div className=' mt-5 px-6 md:px-18  pb-26'>
     <span className='font-medium text-3xl'>Trending Coins</span>
-    <div className="flex gap-4">
+    <div className="flex gap-4 md:gap-24">
         <GraphBox
         logo={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaSEEUJQPS_ARZeaL2PTiA5K0qDjwFzMoVQA&s"} 
         name={"BTC"}
@@ -260,14 +260,14 @@ function Graphs() {
         dollars={crypto?.ethereum?.current_price ?? null}
        coinId="ethereum"
         />
-         <GraphBox
+         {/* <GraphBox
          className={"hidden md:block"}
         logo={"https://res.coinpaper.com/coinpaper/stETH_ug10fg.svg"} 
         name={"stETH"}
        percentile={crypto?.bitcoin?.price_change_percentage_24h ?? null}
         dollars={crypto?.bitcoin?.current_price ?? null}
         coinId="bitcoin"
-        />
+        /> */}
          <GraphBox
          
         logo={"https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/uniswap-uni-icon.png"} 

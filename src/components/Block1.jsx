@@ -204,6 +204,7 @@ import TradingViewWidget from "./TradingViewWidget"
 import Crypto from "../hooks/Crypto"
 import TabSection from "./Tabs"
 import { useNavigate } from "react-router-dom";
+// import Stats from "../hooks/Stats"
 
 
 
@@ -360,6 +361,9 @@ function Block1() {
                       
                   </div>
                   </div>
+                  {/* <div className="text-black bg-white rounded-md p-4">
+                    <Stats/>
+                  </div> */}
               </div>
              </div>
         </div>

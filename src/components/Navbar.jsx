@@ -7,16 +7,16 @@ function Navbar() {
   const navigate = useNavigate();
 
   return (
-    <div className="px-5 pl-1 bg-white shadow-md">
+    <div className="px-5 pl-1 bg-white shadow-md ">
       <div className="flex items-center justify-between py-4">
         
-        {/* Logo */}
+        
         <img
           src="https://nevadabusiness.com/wp-content/uploads/2024/10/KOIN-LOGO.png"
           className="w-32 md:w-40"
         />
 
-        {/* Desktop Menu */}
+        
         <div className="hidden md:flex space-x-7 font-bold items-center ">
           <span className="cursor-pointer" >Crypto Taxes</span>
           <span className="cursor-pointer" >Free Tools</span>
@@ -27,7 +27,7 @@ function Navbar() {
           />
         </div>
 
-        {/* Mobile Menu Icon */}
+        
         <div className="md:hidden">
           <button onClick={() => setIsOpen(!isOpen)}>
             <svg
@@ -55,7 +55,7 @@ function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Dropdown Menu */}
+      
       {isOpen && (
         <div className="md:hidden flex flex-col space-y-4 pb-4 font-bold ">
           <span className="cursor-pointer"  >Crypto Taxes</span>

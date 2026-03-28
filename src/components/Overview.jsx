@@ -154,8 +154,14 @@ function Overview() {
 
 
 const position = crypto
-  ? ((crypto.current_price - crypto.low_24h) /
-      (crypto.high_24h - crypto.low_24h)) * 100
+  ? Math.min(
+      95,   // instead of 100
+      Math.max(
+        5,   // instead of 0
+        ((crypto.current_price - crypto.low_24h) /
+          (crypto.high_24h - crypto.low_24h)) * 100
+      )
+    )
   : 0;
 
   return (
