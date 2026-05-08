@@ -101,7 +101,7 @@ function Crypto() {
         try {
           data = JSON.parse(text);
         } catch (err) {
-          console.error("Not JSON response:", text);
+          console.error("Not JSON response:", text,err);
           return;
         }
 

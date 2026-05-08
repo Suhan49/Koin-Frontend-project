@@ -71,8 +71,8 @@ export default function useTradingChart(coinId, intervalMs = 60000) {
 
         try {
           data = JSON.parse(text);
-        } catch (err) {
-          console.error("Not JSON:", coinId, text);
+        } catch (error) {
+          console.error("Not JSON:", coinId, text,error);
           return;
         }
 
