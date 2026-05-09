@@ -7,17 +7,17 @@ function Navbar() {
   const navigate = useNavigate();
 
   return (
-    <div className="px-5 pl-1 bg-white shadow-md ">
-      <div className="flex items-center justify-between py-4">
+    <div className="px-5 pl-1 bg-white shadow-md w-237 lg:w-full  ">
+      <div className="flex items-center justify-between py-4 ">
         
         
         <img
           src="https://nevadabusiness.com/wp-content/uploads/2024/10/KOIN-LOGO.png"
-          className="w-32 md:w-40"
+          className="w-40"
         />
 
         
-        <div className="hidden md:flex space-x-7 font-bold items-center ">
+        <div className=" hidden  lg:block flex space-x-7 font-bold items-center ">
           <span className="cursor-pointer" >Crypto Taxes</span>
           <span className="cursor-pointer" >Free Tools</span>
           <span className="cursor-pointer" >Resource Center</span>
@@ -28,7 +28,8 @@ function Navbar() {
         </div>
 
         
-        <div className="md:hidden">
+        
+        <div className="lg:hidden ">
           <button onClick={() => setIsOpen(!isOpen)}>
             <svg
               className="w-7 h-7"
@@ -57,7 +58,7 @@ function Navbar() {
 
       
       {isOpen && (
-        <div className="md:hidden flex flex-col space-y-4 pb-4 font-bold ">
+        <div className=" flex flex-col space-y-4 pb-4 font-bold ">
           <span className="cursor-pointer"  >Crypto Taxes</span>
           <span className="cursor-pointer" >Free Tools</span>
           <span className="cursor-pointer" >Resource Center</span>

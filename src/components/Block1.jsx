@@ -226,16 +226,16 @@ function Block1() {
 
   return (
     <>
-    <div className='bg-blue-50 min-h-screen w-full pb-14'>
+    <div className='bg-blue-50 min-h-screen  w-237 lg:w-full pb-14'>
         <div >
-        <div className=' px-2 md:px-12 flex space-x-2 pt-2'>
+        <div className=' px-12 flex space-x-2 pt-2'>
           <span className='opacity-65'>Cryptocurrencies</span>
           <img src='https://cdn.creazilla.com/icons/3261662/double-arrow-icon-md.png' className='w-4 h-4 mt-1 opacity-65'/>
           <span className='font-medium'>{crypto?.bitcoin?.name ?? "Loading..."}</span>
         </div>
 
-        <div className='flex  px-2 md:px-12 py-4 space-x-3'>
-              <div className='bg-white  w-183 md:w-280 rounded-md overflow-hidden'>
+        <div className='flex px-12 py-4 space-x-3'>
+              <div className='bg-white  w-280 rounded-md overflow-hidden'>
                  <div className='flex '>
                     <img src={crypto?.bitcoin?.image} className='w-12 m-4'/>
                  <span className='py-6 font-bold text-2xl -ml-2'>{crypto?.bitcoin?.name ?? "Loading..."}</span>
@@ -266,10 +266,10 @@ function Block1() {
   : "..."}</span>
               </div>
               <div className="w-5xl h-0.5 opacity-55 m-4 bg-gray-400 rounded-sm"></div>
-              <div className="h-70 md:h-100">
+              <div className=" h-100 ">
                 <TradingViewWidget/>
               </div>
-              {/* <div className="flex space-x-7 md:space-x-16 py-8 font-medium bg-blue-50">
+              {/* <div className="flex space-x-16 py-8 font-medium bg-blue-50">
                 <span className="text-blue-700">Overview</span>
                 <span>Fundamentals</span>
                 <span>News Insights</span>
@@ -289,7 +289,7 @@ function Block1() {
               </div>
               
               
-             <div className="hidden md:block">
+             <div className="hidden lg:block">
                <div className=' bg-blue-700 w-88 h-110 rounded-xl py-2 text-white '>
                   <div className="text-center m-4 font-bold text-2xl">Get Started with KoinX</div>
                   <div className="text-center -m-4 font-bold text-2xl">for FREE</div>

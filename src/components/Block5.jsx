@@ -5,7 +5,7 @@ function Block5() {
   return (
     <div className='bg-white  rounded-md mt-5 px-6 py-8 '>
         <span className="font-medium text-3xl ">Team</span>
-        <p className="w-160 md:w-240 pt-2 font-medium opacity-70"> Lorem ipsum dolor sit amet consectetur. Id consequat adipiscing arcu nibh. Eget mattis in mi integer sit egestas. Proin tempor id pretium quam. Facilisis purus convallis quam augue.</p>
+        <p className="max-w-210 lg:max-w-230 pt-2 font-medium opacity-70"> Lorem ipsum dolor sit amet consectetur. Id consequat adipiscing arcu nibh. Eget mattis in mi integer sit egestas. Proin tempor id pretium quam. Facilisis purus convallis quam augue.</p>
         <TeamMembers 
         link={"https://static.bandonthewall.org/app/uploads/2017/03/17426377_10155983893762729_4182151704197896306_n-1.jpg"}
         name={"John Smith"}

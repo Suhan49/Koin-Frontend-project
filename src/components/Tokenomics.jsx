@@ -41,7 +41,7 @@ function Tokenomics() {
 
   return (
     <>
-      <div className="hidden md:block bg-white rounded-md mt-5 px-6 py-8">
+      <div className=" bg-white rounded-md mt-5 px-6 py-8">
         <span className="font-medium text-3xl">Tokenomics</span>
         <p className="font-medium text-xl pt-4">Initial Distribution</p>
 
@@ -83,7 +83,7 @@ function Tokenomics() {
           </div>
         </div>
 
-        <p className="max-w-240 pt-2 font-medium opacity-70">
+        <p className="max-w-210 lg:max-w-230 pt-2 font-medium opacity-70">
           Lorem ipsum dolor sit amet consectetur. Cras aliquet tristique ornare
           vestibulum nunc dignissim vel consequat. Leo etiam nascetur bibendum
           amet enim sit eget leo amet. At metus orci augue fusce eleifend lectus

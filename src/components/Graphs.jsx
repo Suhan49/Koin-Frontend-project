@@ -199,9 +199,9 @@ function Graphs() {
     const crypto = Crypto();
   return (
    <>
-   <div className=' mt-5 px-6 md:px-18  py-8'>
+   <div className=' mt-5 px-18  py-8'>
     <span className='font-medium text-3xl'>You May Also Like</span>
-    <div className="flex gap-4 md:gap-4">
+    <div className="flex gap-4 ">
         <GraphBox
         logo={"https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/vectors/bnb-2c9adc7qw85po528q8y3b.png/bnb-tss7lyzvhxyjfc9ivae0l.png?_a=DATAiZAAZAA0"} 
         name={"BNB"}
@@ -223,7 +223,7 @@ function Graphs() {
         coinId="ripple"
         />
          <GraphBox 
-         className={"hidden md:block"}
+         className={""}
         logo={"https://followmymoney.de/wp-content/uploads/2021/11/Cardano-Logo-1.png"} 
         name={"ADA"}
         percentile={crypto?.cardano?.price_change_percentage_24h ?? null}
@@ -231,7 +231,7 @@ function Graphs() {
         coinId="cardano"
         />
          <GraphBox
-         className={"hidden md:block"}
+         className={"hidden lg:block"}
         logo={"https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/avalanche-avax-icon.png"} 
         name={"AVAX"}
         percentile={crypto?.bitcoin?.price_change_percentage_24h ?? null}
@@ -242,9 +242,9 @@ function Graphs() {
    </div>
 
 
-   <div className=' mt-5 px-6 md:px-18  pb-26'>
+   <div className=' mt-5 px-18  pb-26'>
     <span className='font-medium text-3xl'>Trending Coins</span>
-    <div className="flex gap-4 md:gap-4">
+    <div className="flex gap-4">
         <GraphBox
         logo={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaSEEUJQPS_ARZeaL2PTiA5K0qDjwFzMoVQA&s"} 
         name={"BTC"}
@@ -261,7 +261,7 @@ function Graphs() {
        coinId="ethereum"
         />
          <GraphBox
-         className={"hidden md:block"}
+         className={"hidden lg:block"}
         logo={"https://res.coinpaper.com/coinpaper/stETH_ug10fg.svg"} 
         name={"stETH"}
        percentile={crypto?.bitcoin?.price_change_percentage_24h ?? null}
@@ -277,7 +277,7 @@ function Graphs() {
        coinId="uniswap"
         />
          <GraphBox
-         className={"hidden md:block"}
+         className={"block"}
         logo={"https://assets.kraken.com/marketing/web/icons-uni-webp/s_cfg.webp?i=kds"} 
         name={"CFG"}
         percentile={crypto?.centrifuge?.price_change_percentage_24h ?? null}
@@ -290,8 +290,9 @@ function Graphs() {
    
 
 
-   <div className="block md:hidden ">
-               <div className=' bg-blue-700 w-158 h-110 rounded-xl text-white p-8 mx-auto'>
+   <div className="block lg:hidden  ">
+               <div className="pl-35">
+                <div className=' bg-blue-700 w-158 h-110 rounded-xl text-white p-8 mx-auto'>
                   <div className="text-center m-4 font-bold text-2xl">Get Started with KoinX</div>
                   <div className="text-center -m-4 font-bold text-2xl">for FREE</div>
                   <div className="text-center m-4 py-4 ">With our range of features that you can equip for free, KoinX allows you to be more educated and aware of your tax reports</div>
@@ -333,7 +334,7 @@ function Graphs() {
 
                       </div>
 
-                      <div className="flex items-center justify-between px-10 -m-4">
+                      <div className=" flex items-center justify-between px-10 -m-4">
                         <div className="flex items-center gap-2">
                           <img
                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaSEEUJQPS_ARZeaL2PTiA5K0qDjwFzMoVQA&s"
@@ -365,6 +366,7 @@ function Graphs() {
                   </div>
                   </div>
               </div>
+               </div>
              </div>
    </>
   )

@@ -35,7 +35,7 @@ function TabSection() {
   return (
     <div className="relative">
       
-      <div className="flex space-x-11 md:space-x-25 py-8 font-medium bg-blue-50 relative">
+      <div className="flex space-x-20 lg:space-x-25 py-8 font-medium bg-blue-50 relative">
         {tabs.map((tab, index) => (
           <span
             key={tab}

@@ -168,13 +168,13 @@ const position = crypto
     <>
         <div className='bg-white  rounded-md mt-8 px-6 pb-18 pt-6' >
                   <span className="font-medium text-4xl  ">Performance</span>
-                  <div className="flex w-161 md:w-full">
+                  <div className="flex w-full">
                     <div className="py-6">
                     <span className="opacity-75">Today's Low</span>
                     <div className="py-2 font-medium opacity-75">{crypto ? crypto.low_24h.toLocaleString() : "..."}</div>
                   </div>
                   <div >
-                    <div className="relative w-90 md:w-2xl h-1 opacity-55 mt-12 mx-9  bg-gradient-to-r from-red-500 via-yellow-500 to-green-500 rounded-sm "></div>
+                    <div className="relative w-xl lg:w-2xl h-1 opacity-55 mt-12 mx-9  bg-gradient-to-r from-red-500 via-yellow-500 to-green-500 rounded-sm "></div>
                    <div
                             className="relative -mt-1 "
                             style={{ left: `${position}%` }}
@@ -211,12 +211,12 @@ const position = crypto
                             </span>
                           </div> */}
 
-                   <div className="flex w-161 md:w-full">
+                   <div className="flex w-full">
                     <div className="py-6">
                     <span className="opacity-75">52W Low</span>
                     <div className="py-2 font-medium opacity-75">{crypto ? crypto.atl.toLocaleString() : "..."}</div>
                   </div>
-                  <div className="w-90 md:w-2xl h-1 opacity-55 mt-12 mx-14  bg-gradient-to-r from-red-500 via-yellow-500 to-green-500 rounded-sm "></div>
+                  <div className="w-xl lg:w-2xl h-1 opacity-55 mt-12 mx-14  bg-gradient-to-r from-red-500 via-yellow-500 to-green-500 rounded-sm "></div>
                   <div className="py-6 pl-4">
                     <span className="opacity-75">52W High</span>
                     <div className="py-2 font-medium opacity-75">{crypto ? crypto.ath.toLocaleString() : "..."}</div>

@@ -72,7 +72,7 @@ const holdPercent = total ? (hold / total) * 100 : 0;
             <div className="w-full">
               
         
-              <div className="flex pl-6 md:pl-16 opacity-70 pt-4 items-center gap-3">
+              <div className="flex pl-16 opacity-70 pt-4 items-center gap-3">
                 <span>Buy</span>
                 <div
                     className="h-2 bg-green-600 rounded-sm ml-3" 
@@ -82,7 +82,7 @@ const holdPercent = total ? (hold / total) * 100 : 0;
               </div>
         
         
-              <div className="flex pl-6 md:pl-16 opacity-70 pt-4 items-center gap-3">
+              <div className="flex pl-16 opacity-70 pt-4 items-center gap-3">
                 <span>Hold</span>
                 <div
                     className="h-2 bg-gray-400 rounded-sm"
@@ -92,7 +92,7 @@ const holdPercent = total ? (hold / total) * 100 : 0;
               </div>
         
         
-              <div className="flex pl-6 md:pl-16 opacity-70 pt-4 items-center gap-3">
+              <div className="flex pl-16 opacity-70 pt-4 items-center gap-3">
                 <span>Sell</span>
                  <div
                     className="h-2 bg-red-600 rounded-sm ml-3"

@@ -6,8 +6,10 @@ import Block1 from '../components/Block1'
 function Home() {
   return (
     <>
-    <Navbar/>
+    <div className=''>
+      <Navbar/>
     <Block1/>
+    </div>
     
     
     </>

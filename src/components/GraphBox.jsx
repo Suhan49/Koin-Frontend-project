@@ -27,7 +27,7 @@ function GraphBox({ logo, name, percentile, dollars, coinId, className }) {
 
   const graphColor = percentile >= 0 ? "#16a34a" : "#dc2626";
   return (
-    <div className={`bg-white rounded-md pt-8 border-1 mt-8 p-2 w-65 h-45 ${className}`}>
+    <div className={`bg-white rounded-md pt-8 border-1 mt-8 p-6 lg:p-7   w-65 h-45 ${className}`}>
       
    
       <div className="flex gap-2 -mt-6">
