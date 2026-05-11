@@ -7,13 +7,13 @@ function Navbar() {
   const navigate = useNavigate();
 
   return (
-    <div className="px-5 pl-1 bg-white shadow-md w-237 lg:w-full  ">
+    <div className="px-5 pl-1 bg-white shadow-md w-218 lg:w-full  ">
       <div className="flex items-center justify-between py-4 ">
         
         
         <img
           src="https://nevadabusiness.com/wp-content/uploads/2024/10/KOIN-LOGO.png"
-          className="w-40"
+          className="w-40 "
         />
 
         
@@ -58,7 +58,7 @@ function Navbar() {
 
       
       {isOpen && (
-        <div className=" flex flex-col space-y-4 pb-4 font-bold ">
+        <div className=" flex flex-col space-y-4 pb-4 pl-8 lg:pl-0 font-bold ">
           <span className="cursor-pointer"  >Crypto Taxes</span>
           <span className="cursor-pointer" >Free Tools</span>
           <span className="cursor-pointer" >Resource Center</span>

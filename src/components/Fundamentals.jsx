@@ -10,7 +10,7 @@ function Fundamentals() {
                     <span className="font-medium text-2xl  ">Fundamentals </span>
                     <img src="https://png.pngtree.com/element_our/20200702/ourlarge/pngtree-cartoon-exclamation-mark-icon-free-button-image_2291932.jpg" className="w-6 h-6 rotate-180 mt-1 opacity-70"/>
                   </div>
-                  <div className="flex flex-row space-x-32 lg:space-x-15 -mb-6">
+                  <div className="flex flex-row space-x-12 lg:space-x-15 -mb-6">
                     <div>
                     <FundamentalsBlock 
                     name={"Bitcoin"} price={crypto ? `$${crypto.current_price.toLocaleString()}` : "..."} className={" space-x-55 lg:space-x-73"}/>
@@ -26,7 +26,7 @@ function Fundamentals() {
     crypto?.price_change_percentage_7d_in_currency != null
       ? `${crypto.price_change_percentage_7d_in_currency.toFixed(2)}%`
       : "..."
-  } className={"space-x-40 lg:space-x-57"}
+  } className={"space-x-39 lg:space-x-57"}
 />
                     <FundamentalsBlock 
                     name={"Trading Volume"} price={crypto ? `$${crypto.total_volume.toLocaleString()}` : "..."} className={"space-x-24 lg:space-x-43"}/>
@@ -35,7 +35,7 @@ function Fundamentals() {
                   </div>
                   <div>
                     <FundamentalsBlock 
-                    name={"Market Cap"} price={crypto ? `$${crypto.market_cap.toLocaleString()}` : "..."} className={"space-x-28 lg:space-x-45"}/>
+                    name={"Market Cap"} price={crypto ? `$${crypto.market_cap.toLocaleString()}` : "..."} className={"space-x-27 lg:space-x-45"}/>
                     <FundamentalsBlock 
                     name={"Market Cap Dominence"} price={
   crypto

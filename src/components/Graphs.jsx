@@ -191,17 +191,19 @@ import GraphBox from "./GraphBox"
 import GreenBlock from "./GreenBlock"
 // import { useCoin } from "../hooks/usecoin";
 import Crypto from "../hooks/Crypto"
+import { useNavigate } from "react-router-dom";
 // import AllCoinGraphs from "../hooks/ALLCoinGraphs";
 
 
 function Graphs() {
     //  const coin = useCoin();
     const crypto = Crypto();
+      const navigate = useNavigate();
   return (
    <>
-   <div className=' mt-5 px-18  py-8'>
-    <span className='font-medium text-3xl'>You May Also Like</span>
-    <div className="flex gap-4 ">
+   <div className=' mt-5   py-8'>
+    <span className='font-medium text-3xl pl-18'>You May Also Like</span>
+    <div className="flex gap-14 lg:gap-4 px-18">
         <GraphBox
         logo={"https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/vectors/bnb-2c9adc7qw85po528q8y3b.png/bnb-tss7lyzvhxyjfc9ivae0l.png?_a=DATAiZAAZAA0"} 
         name={"BNB"}
@@ -223,7 +225,7 @@ function Graphs() {
         coinId="ripple"
         />
          <GraphBox 
-         className={""}
+         className={"hidden lg:block"}
         logo={"https://followmymoney.de/wp-content/uploads/2021/11/Cardano-Logo-1.png"} 
         name={"ADA"}
         percentile={crypto?.cardano?.price_change_percentage_24h ?? null}
@@ -244,7 +246,7 @@ function Graphs() {
 
    <div className=' mt-5 px-18  pb-26'>
     <span className='font-medium text-3xl'>Trending Coins</span>
-    <div className="flex gap-4">
+    <div className="flex gap-14 lg:gap-4">
         <GraphBox
         logo={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaSEEUJQPS_ARZeaL2PTiA5K0qDjwFzMoVQA&s"} 
         name={"BTC"}
@@ -277,7 +279,7 @@ function Graphs() {
        coinId="uniswap"
         />
          <GraphBox
-         className={"block"}
+         className={"hidden lg:block"}
         logo={"https://assets.kraken.com/marketing/web/icons-uni-webp/s_cfg.webp?i=kds"} 
         name={"CFG"}
         percentile={crypto?.centrifuge?.price_change_percentage_24h ?? null}
@@ -291,14 +293,17 @@ function Graphs() {
 
 
    <div className="block lg:hidden  ">
-               <div className="pl-35">
+               <div className="pl-28">
                 <div className=' bg-blue-700 w-158 h-110 rounded-xl text-white p-8 mx-auto'>
                   <div className="text-center m-4 font-bold text-2xl">Get Started with KoinX</div>
                   <div className="text-center -m-4 font-bold text-2xl">for FREE</div>
                   <div className="text-center m-4 py-4 ">With our range of features that you can equip for free, KoinX allows you to be more educated and aware of your tax reports</div>
                   <img src="https://static.vecteezy.com/system/resources/thumbnails/011/344/620/small/teenage-girl-is-using-digital-tablet-while-sitting-on-the-sofa-3d-character-illustration-png.png" className="w-52 mx-auto -mt-10"/>
                   <div className="bg-white text-black px-6 py-2  rounded-md w-fit mx-auto">
-                <button className="flex items-center font-medium gap-2">
+                <button 
+            onClick={() => navigate("/signup")}
+                className="flex items-center font-medium gap-2">
+                
                   Get Started For FREE
                   <img
                     src="https://static.thenounproject.com/png/888647-200.png"

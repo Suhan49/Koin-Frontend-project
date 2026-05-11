@@ -226,7 +226,7 @@ function Block1() {
 
   return (
     <>
-    <div className='bg-blue-50 min-h-screen  w-237 lg:w-full pb-14'>
+    <div className='bg-blue-50 min-h-screen  w-218 lg:w-full pb-14'>
         <div >
         <div className=' px-12 flex space-x-2 pt-2'>
           <span className='opacity-65'>Cryptocurrencies</span>
@@ -266,7 +266,7 @@ function Block1() {
   : "..."}</span>
               </div>
               <div className="w-5xl h-0.5 opacity-55 m-4 bg-gray-400 rounded-sm"></div>
-              <div className=" h-100 ">
+              <div className=" h-100  ">
                 <TradingViewWidget/>
               </div>
               {/* <div className="flex space-x-16 py-8 font-medium bg-blue-50">
@@ -296,7 +296,9 @@ function Block1() {
                   <div className="text-center m-4 py-4 ">With our range of features that you can equip for free, KoinX allows you to be more educated and aware of your tax reports</div>
                   <img src="https://static.vecteezy.com/system/resources/thumbnails/011/344/620/small/teenage-girl-is-using-digital-tablet-while-sitting-on-the-sofa-3d-character-illustration-png.png" className="w-52 mx-auto -mt-10"/>
                   <div className="bg-white text-black px-6 py-2  rounded-md w-fit mx-auto  ">
-                <button className="flex items-center font-medium gap-2 cursor-pointer" onClick={() => navigate("/signup")}> 
+                <button 
+               
+                className="flex items-center font-medium gap-2 cursor-pointer" onClick={() => navigate("/signup")}> 
                   Get Started For FREE
                   <img
                     src="https://static.thenounproject.com/png/888647-200.png"

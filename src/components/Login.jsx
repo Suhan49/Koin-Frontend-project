@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+
 function Login() {
      const navigate = useNavigate();
 
@@ -66,6 +67,7 @@ function Login() {
           {/* Button */}
           <button
             type="submit"
+            onClick={() => navigate("/home")}
             className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition"
           >
             Login
