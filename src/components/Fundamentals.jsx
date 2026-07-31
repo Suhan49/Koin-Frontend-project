@@ -1,9 +1,6 @@
 import FundamentalsBlock from "./FundamentalsBlock"
-import Crypto from "../hooks/Crypto"
 
-function Fundamentals() {
-    const crypto = Crypto()?.bitcoin;
-
+function Fundamentals({ crypto }) {
   return (
     <div className="bg-white pl-4 pb-6">
          <div className="flex space-x-2">

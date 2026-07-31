@@ -84,8 +84,7 @@ function Crypto() {
           "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin,ethereum,solana,binancecoin,cardano,ripple,uniswap,centrifuge&price_change_percentage=1h,24h,7d";
 
         // ✅ CHANGED PROXY (more reliable than allorigins)
-        const url = `https://corsproxy.io/?${encodeURIComponent(targetUrl)}`;
-
+const url = targetUrl;
         const res = await fetch(url);
 
         if (!res.ok) {

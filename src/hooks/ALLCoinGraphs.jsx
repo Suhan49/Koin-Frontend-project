@@ -36,72 +36,37 @@
 
 
 
-// useTradingChart.js
-import { useEffect, useState } from "react";
+import { useMemo } from "react";
 
-export default function useTradingChart(coinId, intervalMs = 60000) {
-  const [chartData, setChartData] = useState([]);
+export default function useTradingChart(coinId) {
+  return useMemo(() => {
+    const positiveCoins = [
+      "bitcoin",
+      "ethereum",
+      "binancecoin",
+      "solana",
+      "cardano",
+    ];
 
-  useEffect(() => {
-    let isFetching = false;
-    let interval;
+    const positive = positiveCoins.includes(coinId);
 
-    const fetchChart = async () => {
-      if (isFetching) return; // ✅ prevent overlapping calls
-      isFetching = true;
+    const data = [];
 
-      try {
-        const targetUrl = `https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=usd&days=1&interval=hourly`;
+    for (let i = 0; i < 24; i++) {
+      let price;
 
-        // ✅ FIX: use proxy (avoids CORS error)
-        const url = `https://corsproxy.io/?${encodeURIComponent(targetUrl)}`;
-
-        const res = await fetch(url);
-
-        // ✅ handle API / proxy errors
-        if (!res.ok) {
-          const text = await res.text();
-          console.error("API Error:", coinId, text);
-          return;
-        }
-
-        // ✅ safe JSON parse (prevents "Throttled" crash)
-        const text = await res.text();
-        let data;
-
-        try {
-          data = JSON.parse(text);
-        } catch (error) {
-          console.error("Not JSON:", coinId, text,error);
-          return;
-        }
-
-        if (data.prices) {
-          const formatted = data.prices.map(([time, price]) => ({
-            time: new Date(time).toLocaleTimeString([], {
-              hour: "2-digit",
-              minute: "2-digit",
-            }),
-            price,
-          }));
-
-          setChartData(formatted);
-        }
-      } catch (error) {
-        console.error("Error fetching chart for", coinId, error);
-      } finally {
-        isFetching = false;
+      if (positive) {
+        price = 50 + i * 1.5 + Math.sin(i / 2) * 2;
+      } else {
+        price = 80 - i * 1.2 + Math.sin(i / 2) * 2;
       }
-    };
 
-    // ✅ call once
-    fetchChart();
+      data.push({
+        time: i,
+        price,
+      });
+    }
 
-    // ⚠️ keep interval slow to avoid rate limit
-    interval = setInterval(fetchChart, intervalMs);
-
-    return () => clearInterval(interval);
-  }, [coinId, intervalMs]);
-
-  return chartData;
+    return data;
+  }, [coinId]);
 }

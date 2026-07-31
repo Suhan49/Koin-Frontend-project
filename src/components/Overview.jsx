@@ -143,14 +143,11 @@
 // import FundamentalsBlock from "./FundamentalsBlock"
 import Block2 from "./Block2"
 // import { useCoin } from "../hooks/usecoin";
-import Crypto from "../hooks/Crypto";
 import Fundamentals from "./Fundamentals";
 
 
-function Overview() {
-// const coin = useCoin();
+function Overview({ crypto }) {// const coin = useCoin();
 
- const crypto = Crypto()?.bitcoin;
 
 
 const position = crypto
@@ -223,7 +220,7 @@ const position = crypto
                   </div>
                   </div>
 
-                  <Fundamentals/>
+                  <Fundamentals crypto={crypto} />
                 </div>
              <div>
                  <Block2/>

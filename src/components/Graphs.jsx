@@ -190,14 +190,12 @@
 import GraphBox from "./GraphBox"
 import GreenBlock from "./GreenBlock"
 // import { useCoin } from "../hooks/usecoin";
-import Crypto from "../hooks/Crypto"
 import { useNavigate } from "react-router-dom";
 // import AllCoinGraphs from "../hooks/ALLCoinGraphs";
 
 
-function Graphs() {
+function Graphs({ crypto }) {
     //  const coin = useCoin();
-    const crypto = Crypto();
       const navigate = useNavigate();
   return (
    <>

@@ -283,7 +283,7 @@ function Block1() {
                  <div className="bg-blue-50">
                   <Overview/>
                  </div> */}
-                    <TabSection/>
+                    <TabSection crypto={crypto} />
                 
               
               </div>
@@ -373,7 +373,7 @@ function Block1() {
     </div>
                 
                 <div>
-                  <Graphs />
+                  <Graphs crypto={crypto} />
                 </div>
 
     </>

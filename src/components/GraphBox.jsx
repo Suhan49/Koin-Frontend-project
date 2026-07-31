@@ -18,31 +18,41 @@
 
 // export default GraphBox
 
-// import AllTradingGraphs from "../hooks/ALLCoinGraphs"
 import GreenBlock from "./GreenBlock";
 import SingleCoinGraph from "./SingleGraph";
 
-function GraphBox({ logo, name, percentile, dollars, coinId, className }) {
+function GraphBox({
+  logo,
+  name,
+  percentile,
+  dollars,
+  coinId,
+  className,
+}) {
 
+  const positive = (percentile ?? 0) >= 0;
 
-  const graphColor = percentile >= 0 ? "#16a34a" : "#dc2626";
   return (
-    <div className={`bg-white rounded-md pt-8 border-1 mt-8 p-6 lg:p-7   w-65 h-45 ${className}`}>
-      
-   
-      <div className="flex gap-2 -mt-6">
-        <img src={logo} className="w-8 h-8"/>
-        <p className="font-medium text-xl opacity-60">{name}</p>
-        <GreenBlock value={percentile} className="-mt-1 pl-2 -ml-1 -mb-2 h-8"/>
+    <div
+      className={`bg-white rounded-md border mt-8 px-4 w-64  ${className}`}
+    >
+      <div className="flex items-center gap-2">
+        <img src={logo} className="w-8 h-8" />
+
+        <p className="font-semibold">{name}</p>
+
+        <GreenBlock value={percentile} />
       </div>
 
-     
-      <span className="font-medium text-2xl pl-2">${dollars}</span>
-
-     
-      <div className="-mt-4">
-        <SingleCoinGraph coinId={coinId} coinName={name} strokeColor={graphColor} />
+      <div className="text-xl font-bold mt-2">
+        ${dollars?.toLocaleString()}
       </div>
+
+      <SingleCoinGraph
+        coinId={coinId}
+        positive={positive}
+        strokeColor={positive ? "#16a34a" : "#dc2626"}
+      />
     </div>
   );
 }

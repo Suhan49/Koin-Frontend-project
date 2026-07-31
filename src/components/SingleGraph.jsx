@@ -1,18 +1,32 @@
-import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip } from "recharts";
-import useTradingChart from "../hooks/ALLCoinGraphs";
+import {
+  ResponsiveContainer,
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+} from "recharts";
 
-export default function SingleCoinGraph({ coinId, strokeColor = "#3b82f6" }) {
-  const data = useTradingChart(coinId);
+import { graphData } from "../data/graphData";
+
+export default function SingleCoinGraph({
+  coinId,
+  strokeColor = "#22c55e",
+}) {
+  const data = graphData[coinId] || [];
 
   return (
-    <div className="p-2   mb-4">
-      {/* <h3 className="font-medium text-sm mb-1">{coinName}</h3> */}
-      <ResponsiveContainer width="100%" height={120}>
-        <LineChart data={data} style={{ pointerEvents: "none" }}>
-          <XAxis dataKey="time" hide />
+    <div className="w-full h-20">
+      <ResponsiveContainer width="100%" height="100%">
+        <LineChart data={data}>
+          <XAxis hide dataKey="x" />
           <YAxis hide domain={["auto", "auto"]} />
-          <Tooltip formatter={(value) => `$${value.toLocaleString()}`} />
-          <Line type="monotone" dataKey="price" stroke={strokeColor} dot={false} strokeWidth={2} />
+          <Line
+            type="monotone"
+            dataKey="y"
+            stroke={strokeColor}
+            strokeWidth={2}
+            dot={false}
+          />
         </LineChart>
       </ResponsiveContainer>
     </div>

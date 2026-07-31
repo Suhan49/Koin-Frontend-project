@@ -8,8 +8,8 @@ import Tokenomics from "./Tokenomics";
 import AboutBitcoin from "./AboutBitcoin";
 
 
-function TabSection() {
-  const tabs = [
+
+function TabSection({ crypto }) {  const tabs = [
     "Overview",
     // "Fundamentals",
     "News Insights",
@@ -35,7 +35,7 @@ function TabSection() {
   return (
     <div className="relative">
       
-      <div className="flex space-x-17 lg:space-x-25 py-8 font-medium bg-blue-50 relative">
+      <div className="flex space-x-17 lg:space-x-19 my-20 py-8 font-medium bg-blue-50 relative">
         {tabs.map((tab, index) => (
           <span
             key={tab}
@@ -61,10 +61,14 @@ function TabSection() {
 
       
       <div className="bg-blue-50 mt-4">
-        {activeTab === "Overview" && <Overview />}
+        {activeTab === "Overview" && (
+  <Overview crypto={crypto?.bitcoin} />
+)}
         {/* {activeTab === "Fundamentals" && <Fundamentals/>} */}
         {activeTab === "News Insights" && <NewInsights/>}
-        {activeTab === "Sentiments" && <Sentiment/>}
+        {activeTab === "Sentiments" && (
+  <Sentiment crypto={crypto} />
+)}
         {activeTab === "Team" && <Block5/>}
         {activeTab === "Technicals" && <AboutBitcoin/>}
         {activeTab === "Tokenomics" && <Tokenomics/>}

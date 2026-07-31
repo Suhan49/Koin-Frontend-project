@@ -1,9 +1,6 @@
-import Crypto from "../hooks/Crypto";
 import SlidingBoxes from "./SlidingBoxes";
 
-function Sentiment() {
-
-        const crypto = Crypto();
+function Sentiment({ crypto }) {
 
 const buy = Math.max(0,crypto?.bitcoin?.price_change_percentage_24h ?? 0 );
 

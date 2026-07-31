@@ -27,7 +27,7 @@
 //       interval: "D",
 //       theme: "light",
 //       autosize: true, // ✅ makes width responsive
-//       height: isMobile ? 300 : 400, // ✅ dynamic height
+//       height: 500, // ✅ dynamic height
 //     });
 
 //     container.current.appendChild(script);
@@ -79,12 +79,19 @@ function TradingViewWidget() {
       script.async = true;
 
       script.innerHTML = JSON.stringify({
-        symbol: "NASDAQ:AAPL",
-        interval: "D",
-        theme: "light",
-        autosize: true,
-        height: isMobile ? 300 : 400,
-      });
+  autosize: true,
+  symbol: "BINANCE:BTCUSDT",
+  interval: "60",
+  timezone: "Etc/UTC",
+  theme: "light",
+  style: "1",
+  locale: "en",
+  enable_publishing: false,
+  allow_symbol_change: true,
+  hide_top_toolbar: false,
+  save_image: false,
+  support_host: "https://www.tradingview.com",
+});
 
       container.current.appendChild(script);
     }, 500); // ✅ delay prevents null error
@@ -93,12 +100,16 @@ function TradingViewWidget() {
   }, [isMobile]);
 
   return (
-    <div className="tradingview-widget-container w-full">
+    <div
+  className="tradingview-widget-container w-full"
+  style={{ height: "500px" }}
+>
       {/* ✅ FIX 3: ensure inner div exists */}
       <div
-        className="tradingview-widget-container__widget w-full"
-        ref={container}
-      ></div>
+  ref={container}
+  className="tradingview-widget-container__widget"
+  style={{ height: "100%", width: "100%" }}
+/>
     </div>
   );
 }
