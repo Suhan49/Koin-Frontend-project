@@ -1,16 +1,33 @@
-
-
-function TeamMembers({link,name,description}) {
+function TeamMembers({ link, name, description }) {
   return (
-    <div className="bg-blue-100 rounded-md mt-5 px-6 pt-8 pb-2 flex flex-col lg:flex-row  space-x-6 w-full">
-        <div>
-            <img src={link} className="rounded-md w-36 h-26  -mt-3 mx-auto lg:-ml-2"/>
-            <p className=" pl-70 lg:pl-5 font-bold pt-2">{name}</p>
-            <p className=" pl-68 lg:pl-3 opacity-55 text-[14px] ">Designation here</p>
-        </div>
-        <div className=" w-160 lg:w-180 text-center pt-2">{description}</div>
+    <div className="bg-blue-100 rounded-lg mt-5 p-5 flex flex-col lg:flex-row gap-6">
+
+      {/* Left Section */}
+      <div className="flex flex-col items-center lg:w-40 shrink-0">
+        <img
+          src={link}
+          alt={name}
+          className="w-32 h-32 rounded-lg object-cover"
+        />
+
+        <h3 className="mt-3 font-bold text-lg text-center">
+          {name}
+        </h3>
+
+        <p className="text-sm text-gray-600 text-center">
+          Designation here
+        </p>
+      </div>
+
+      {/* Right Section */}
+      <div className="flex-1">
+        <p className="text-gray-700 leading-7 text-sm md:text-base">
+          {description}
+        </p>
+      </div>
+
     </div>
-  )
+  );
 }
 
-export default TeamMembers
+export default TeamMembers;

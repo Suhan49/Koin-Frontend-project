@@ -7,30 +7,45 @@ function Navbar() {
   const navigate = useNavigate();
 
   return (
-    <div className="px-5 pl-1 bg-white shadow-md w-218 lg:w-full  ">
-      <div className="flex items-center justify-between py-4 ">
-        
-        
-        <img
-          src="https://nevadabusiness.com/wp-content/uploads/2024/10/KOIN-LOGO.png"
-          className="w-40 "
-        />
+    <nav className="w-full bg-white shadow-md">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        
-        <div className=" hidden  lg:block flex space-x-7 font-bold items-center ">
-          <span className="cursor-pointer" >Crypto Taxes</span>
-          <span className="cursor-pointer" >Free Tools</span>
-          <span className="cursor-pointer" >Resource Center</span>
-          <Button
-            label={"Get Started"} className="cursor-pointer"
-            onClick={() => navigate("/signup")}
+        {/* Top Navbar */}
+        <div className="flex items-center justify-between h-16">
+
+          {/* Logo */}
+          <img
+            src="https://nevadabusiness.com/wp-content/uploads/2024/10/KOIN-LOGO.png"
+            alt="KoinX"
+            className="w-32 sm:w-36 lg:w-40"
           />
-        </div>
 
-        
-        
-        <div className="lg:hidden ">
-          <button onClick={() => setIsOpen(!isOpen)}>
+          {/* Desktop Menu */}
+          <div className="hidden lg:flex items-center gap-8 font-semibold">
+            <span className="cursor-pointer hover:text-blue-600">
+              Crypto Taxes
+            </span>
+
+            <span className="cursor-pointer hover:text-blue-600">
+              Free Tools
+            </span>
+
+            <span className="cursor-pointer hover:text-blue-600">
+              Resource Center
+            </span>
+
+            <Button
+              label="Get Started"
+              className="cursor-pointer"
+              onClick={() => navigate("/signup")}
+            />
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="lg:hidden"
+            onClick={() => setIsOpen(!isOpen)}
+          >
             <svg
               className="w-7 h-7"
               fill="none"
@@ -54,21 +69,38 @@ function Navbar() {
             </svg>
           </button>
         </div>
-      </div>
 
-      
-      {isOpen && (
-        <div className=" flex flex-col space-y-4 pb-4 pl-8 lg:pl-0 font-bold ">
-          <span className="cursor-pointer"  >Crypto Taxes</span>
-          <span className="cursor-pointer" >Free Tools</span>
-          <span className="cursor-pointer" >Resource Center</span>
-          <Button
-            label={"Get Started"} className={"cursor-pointer"}
-            onClick={() => navigate("/signup")}
-          />
-        </div>
-      )}
-    </div>
+        {/* Mobile Menu */}
+        {isOpen && (
+          <div className="lg:hidden border-t py-4">
+
+            <div className="flex flex-col gap-4 font-semibold">
+
+              <span className="cursor-pointer">
+                Crypto Taxes
+              </span>
+
+              <span className="cursor-pointer">
+                Free Tools
+              </span>
+
+              <span className="cursor-pointer">
+                Resource Center
+              </span>
+
+              <Button
+                label="Get Started"
+                className="w-full cursor-pointer"
+                onClick={() => navigate("/signup")}
+              />
+
+            </div>
+
+          </div>
+        )}
+
+      </div>
+    </nav>
   );
 }
 

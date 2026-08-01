@@ -187,194 +187,238 @@
 
 
 
-import GraphBox from "./GraphBox"
-import GreenBlock from "./GreenBlock"
-// import { useCoin } from "../hooks/usecoin";
+import GraphBox from "./GraphBox";
+import GreenBlock from "./GreenBlock";
 import { useNavigate } from "react-router-dom";
-// import AllCoinGraphs from "../hooks/ALLCoinGraphs";
-
 
 function Graphs({ crypto }) {
-    //  const coin = useCoin();
-      const navigate = useNavigate();
+  const navigate = useNavigate();
+
   return (
-   <>
-   <div className=' mt-5   py-8'>
-    <span className='font-medium text-3xl pl-18'>You May Also Like</span>
-    <div className="flex gap-14 lg:gap-4 px-18">
-        <GraphBox
-        logo={"https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/vectors/bnb-2c9adc7qw85po528q8y3b.png/bnb-tss7lyzvhxyjfc9ivae0l.png?_a=DATAiZAAZAA0"} 
-        name={"BNB"}
-        percentile={crypto?.binancecoin?.price_change_percentage_24h ?? null}
-        dollars={crypto?.binancecoin?.current_price ?? null}
-        coinId="binancecoin"        />
-         <GraphBox
-        logo={"https://cdn.iconscout.com/icon/premium/png-256-thumb/solana-sol-icon-svg-download-png-5795323.png"} 
-        name={"SOL"}
-       percentile={crypto?.solana?.price_change_percentage_24h ?? null}
-        dollars={crypto?.solana?.current_price ?? null}
-        coinId="solana"
-        />
-         <GraphBox
-        logo={"https://cdn-icons-png.flaticon.com/512/12114/12114256.png"} 
-        name={"XRP"}
-        percentile={crypto?.ripple?.price_change_percentage_24h ?? null}
-        dollars={crypto?.ripple?.current_price ?? null}
-        coinId="ripple"
-        />
-         <GraphBox 
-         className={"hidden lg:block"}
-        logo={"https://followmymoney.de/wp-content/uploads/2021/11/Cardano-Logo-1.png"} 
-        name={"ADA"}
-        percentile={crypto?.cardano?.price_change_percentage_24h ?? null}
-        dollars={crypto?.cardano?.current_price ?? null}
-        coinId="cardano"
-        />
-         <GraphBox
-         className={"hidden lg:block"}
-        logo={"https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/avalanche-avax-icon.png"} 
-        name={"AVAX"}
-        percentile={crypto?.bitcoin?.price_change_percentage_24h ?? null}
-        dollars={crypto?.bitcoin?.current_price ?? null}
-        coinId="bitcoin"
-        />
-    </div>
-   </div>
+    <>
+      {/* You May Also Like */}
+      <div className="mt-8">
+        <h2 className="text-2xl lg:text-3xl font-medium px-4 lg:px-0">
+          You May Also Like
+        </h2>
 
+        <div className="flex gap-4 overflow-x-auto py-5 px-4 lg:px-0 scrollbar-hide">
+          <GraphBox
+            logo="https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/vectors/bnb-2c9adc7qw85po528q8y3b.png/bnb-tss7lyzvhxyjfc9ivae0l.png?_a=DATAiZAAZAA0"
+            name="BNB"
+            percentile={crypto?.binancecoin?.price_change_percentage_24h ?? null}
+            dollars={crypto?.binancecoin?.current_price ?? null}
+            coinId="binancecoin"
+          />
 
-   <div className=' mt-5 px-18  pb-26'>
-    <span className='font-medium text-3xl'>Trending Coins</span>
-    <div className="flex gap-14 lg:gap-4">
-        <GraphBox
-        logo={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaSEEUJQPS_ARZeaL2PTiA5K0qDjwFzMoVQA&s"} 
-        name={"BTC"}
-        percentile={crypto?.bitcoin?.price_change_percentage_24h ?? null}
-        dollars={crypto?.bitcoin?.current_price ?? null}
-        coinId="bitcoin"
-        />
-        
-         <GraphBox
-        logo={"https://i.pinimg.com/736x/b0/8e/54/b08e54bd5c0c7d31a5070134e10bf10c.jpg"} 
-        name={"ETH"}
-        percentile={crypto?.ethereum?.price_change_percentage_24h ?? null}
-        dollars={crypto?.ethereum?.current_price ?? null}
-       coinId="ethereum"
-        />
-         <GraphBox
-         className={"hidden lg:block"}
-        logo={"https://res.coinpaper.com/coinpaper/stETH_ug10fg.svg"} 
-        name={"stETH"}
-       percentile={crypto?.bitcoin?.price_change_percentage_24h ?? null}
-        dollars={crypto?.bitcoin?.current_price ?? null}
-        coinId="bitcoin"
-        />
-         <GraphBox
-         
-        logo={"https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/uniswap-uni-icon.png"} 
-        name={"UNI"}
-       percentile={crypto?.uniswap?.price_change_percentage_24h ?? null}
-        dollars={crypto?.uniswap?.current_price ?? null}
-       coinId="uniswap"
-        />
-         <GraphBox
-         className={"hidden lg:block"}
-        logo={"https://assets.kraken.com/marketing/web/icons-uni-webp/s_cfg.webp?i=kds"} 
-        name={"CFG"}
-        percentile={crypto?.centrifuge?.price_change_percentage_24h ?? null}
-        dollars={crypto?.centrifuge?.current_price ?? null}
-       coinId="centrifuge"
-        />
-    </div>
-   </div>
+          <GraphBox
+            logo="https://cdn.iconscout.com/icon/premium/png-256-thumb/solana-sol-icon-svg-download-png-5795323.png"
+            name="SOL"
+            percentile={crypto?.solana?.price_change_percentage_24h ?? null}
+            dollars={crypto?.solana?.current_price ?? null}
+            coinId="solana"
+          />
 
-   
+          <GraphBox
+            logo="https://cdn-icons-png.flaticon.com/512/12114/12114256.png"
+            name="XRP"
+            percentile={crypto?.ripple?.price_change_percentage_24h ?? null}
+            dollars={crypto?.ripple?.current_price ?? null}
+            coinId="ripple"
+          />
 
+          <GraphBox
+            logo="https://followmymoney.de/wp-content/uploads/2021/11/Cardano-Logo-1.png"
+            name="ADA"
+            percentile={crypto?.cardano?.price_change_percentage_24h ?? null}
+            dollars={crypto?.cardano?.current_price ?? null}
+            coinId="cardano"
+          />
 
-   <div className="block lg:hidden  ">
-               <div className="pl-28">
-                <div className=' bg-blue-700 w-158 h-110 rounded-xl text-white p-8 mx-auto'>
-                  <div className="text-center m-4 font-bold text-2xl">Get Started with KoinX</div>
-                  <div className="text-center -m-4 font-bold text-2xl">for FREE</div>
-                  <div className="text-center m-4 py-4 ">With our range of features that you can equip for free, KoinX allows you to be more educated and aware of your tax reports</div>
-                  <img src="https://static.vecteezy.com/system/resources/thumbnails/011/344/620/small/teenage-girl-is-using-digital-tablet-while-sitting-on-the-sofa-3d-character-illustration-png.png" className="w-52 mx-auto -mt-10"/>
-                  <div className="bg-white text-black px-6 py-2  rounded-md w-fit mx-auto">
-                <button 
-            onClick={() => navigate("/signup")}
-                className="flex items-center font-medium gap-2">
-                
-                  Get Started For FREE
-                  <img
-                    src="https://static.thenounproject.com/png/888647-200.png"
-                    className="size-5"
-                  />
-                </button>
+          <GraphBox
+            logo="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/avalanche-avax-icon.png"
+            name="AVAX"
+            percentile={crypto?.bitcoin?.price_change_percentage_24h ?? null}
+            dollars={crypto?.bitcoin?.current_price ?? null}
+            coinId="bitcoin"
+          />
+        </div>
+      </div>
+
+      {/* Trending Coins */}
+      <div className="mt-10 pb-10">
+        <h2 className="text-2xl lg:text-3xl font-medium px-4 lg:px-0">
+          Trending Coins
+        </h2>
+
+        <div className="flex gap-4 overflow-x-auto py-5 px-4 lg:px-0 scrollbar-hide">
+          <GraphBox
+            logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaSEEUJQPS_ARZeaL2PTiA5K0qDjwFzMoVQA&s"
+            name="BTC"
+            percentile={crypto?.bitcoin?.price_change_percentage_24h ?? null}
+            dollars={crypto?.bitcoin?.current_price ?? null}
+            coinId="bitcoin"
+          />
+
+          <GraphBox
+            logo="https://i.pinimg.com/736x/b0/8e/54/b08e54bd5c0c7d31a5070134e10bf10c.jpg"
+            name="ETH"
+            percentile={crypto?.ethereum?.price_change_percentage_24h ?? null}
+            dollars={crypto?.ethereum?.current_price ?? null}
+            coinId="ethereum"
+          />
+
+          <GraphBox
+            logo="https://res.coinpaper.com/coinpaper/stETH_ug10fg.svg"
+            name="stETH"
+            percentile={crypto?.bitcoin?.price_change_percentage_24h ?? null}
+            dollars={crypto?.bitcoin?.current_price ?? null}
+            coinId="bitcoin"
+          />
+
+          <GraphBox
+            logo="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/uniswap-uni-icon.png"
+            name="UNI"
+            percentile={crypto?.uniswap?.price_change_percentage_24h ?? null}
+            dollars={crypto?.uniswap?.current_price ?? null}
+            coinId="uniswap"
+          />
+
+          <GraphBox
+            logo="https://assets.kraken.com/marketing/web/icons-uni-webp/s_cfg.webp?i=kds"
+            name="CFG"
+            percentile={crypto?.centrifuge?.price_change_percentage_24h ?? null}
+            dollars={crypto?.centrifuge?.current_price ?? null}
+            coinId="centrifuge"
+          />
+        </div>
+      </div>
+
+      {/* Mobile Sidebar */}
+      <div className="lg:hidden lg:w-[350px] flex-col gap-6 shrink-0">
+
+              {/* Blue Card */}
+              <div className="bg-blue-700 rounded-xl text-white p-6">
+
+                <h2 className="text-center font-bold text-2xl">
+                  Get Started with KoinX
+                </h2>
+
+                <h2 className="text-center font-bold text-2xl">
+                  for FREE
+                </h2>
+
+                <p className="text-center mt-5 text-sm leading-6">
+                  With our range of features that you can equip for free,
+                  KoinX allows you to be more educated and aware of your tax reports.
+                </p>
+
+                <img
+                  src="https://static.vecteezy.com/system/resources/thumbnails/011/344/620/small/teenage-girl-is-using-digital-tablet-while-sitting-on-the-sofa-3d-character-illustration-png.png"
+                  className="w-40 md:w-52 mx-auto my-6"
+                  alt="girl"
+                />
+
+                <div className="flex justify-center">
+                  <button
+                    onClick={() => navigate("/signup")}
+                    className="bg-white text-black px-6 py-3 rounded-lg flex items-center gap-2 font-semibold"
+                  >
+                    Get Started For FREE
+
+                    <img
+                      src="https://static.thenounproject.com/png/888647-200.png"
+                      className="w-5 h-5"
+                      alt="arrow"
+                    />
+                  </button>
+                </div>
+
               </div>
 
-                  <div className="py-10 ">
-                    <div className='bg-white py-2 my-4 rounded-md text-black'> 
-                      <span className="mx-auto font-bold text-2xl p-6">Trending Coins (24h)</span>
-                      {/* <div className="flex">
-                        <img src="https://cdn-icons-png.flaticon.com/512/14446/14446160.png" className="w-6 h-6 m-6"/>
-                        <span className="font-medium py-11 -m-5 ">Ethereum(ETH)</span> 
-                        <div className="mx-24 ">
-                          <GreenBlock 
-                        label={"8.21%"} className=" "
-                        />
-                        </div>
-                      </div> */}
+              {/* Trending Card */}
 
-                      <div className="flex items-center justify-between px-9 -m-2">
-                        <div className="flex items-center gap-2">
-                          <img
-                            src="https://cdn-icons-png.flaticon.com/512/14446/14446160.png"
-                            className="w-6 h-6"
-                          />
-                          <span className="font-medium">Ethereum (ETH)</span>
-                        </div>
-                        <GreenBlock
-  value={crypto?.ethereum?.price_change_percentage_24h ?? null}
-/>
+              <div className="bg-white rounded-xl shadow-md p-5">
 
-                      </div>
+                <h2 className="text-xl font-bold mb-6">
+                  Trending Cryptos (24h)
+                </h2>
 
-                      <div className=" flex items-center justify-between px-10 -m-4">
-                        <div className="flex items-center gap-2">
-                          <img
-                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaSEEUJQPS_ARZeaL2PTiA5K0qDjwFzMoVQA&s"
-                            className="w-6 h-6"
-                          />
-                          <span className="font-medium">Bitcoin (BTC)</span>
-                        </div>
-                        <GreenBlock value={crypto?.bitcoin?.price_change_percentage_24h ?? null} />
+                <div>
 
+                  <div className="flex items-center justify-between">
 
-                      </div>
+                    <div className="flex items-center gap-3">
 
-                      <div className="flex items-center justify-between px-9 -m-4">
-                        <div className="flex items-center gap-2">
-                          <img
-                            src="https://logowik.com/content/uploads/images/polygon-matic-icon3725.logowik.com.webp" 
-                            className="w-8 h-7 "
-                          />
-                          <span className="font-medium">Polygon (Matic)</span>
-                        </div>
-                       <GreenBlock
-  value={crypto?.solana?.price_change_percentage_24h ?? null}
-/>
+                      <img
+                        src="https://cdn-icons-png.flaticon.com/512/14446/14446160.png"
+                        className="w-7 h-7"
+                        alt="ETH"
+                      />
 
+                      <span className="font-medium">
+                        Ethereum (ETH)
+                      </span>
 
-                      </div>
-                      
-                      
+                    </div>
+
+                    <GreenBlock
+                      value={crypto?.ethereum?.price_change_percentage_24h ?? null}
+                    />
+
                   </div>
+
+                  <div className="flex items-center justify-between">
+
+                    <div className="flex items-center gap-3">
+
+                      <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaSEEUJQPS_ARZeaL2PTiA5K0qDjwFzMoVQA&s"
+                        className="w-7 h-7"
+                        alt="BTC"
+                      />
+
+                      <span className="font-medium">
+                        Bitcoin (BTC)
+                      </span>
+
+                    </div>
+
+                    <GreenBlock
+                      value={crypto?.bitcoin?.price_change_percentage_24h ?? null}
+                    />
+
                   </div>
-              </div>
-               </div>
-             </div>
-   </>
-  )
+
+                  <div className="flex items-center justify-between">
+
+                    <div className="flex items-center gap-3">
+
+                      <img
+                        src="https://cdn.iconscout.com/icon/premium/png-256-thumb/solana-sol-icon-svg-download-png-5795323.png"
+                        className="w-7 h-7"
+                        alt="SOL"
+                      />
+
+                      <span className="font-medium">
+                        Solana (SOL)
+                      </span>
+
+                    </div>
+
+                    <GreenBlock
+                      value={crypto?.solana?.price_change_percentage_24h ?? null}
+                    />
+
+                  </div>
+
+          </div>
+        </div>
+      </div>
+    </>
+  );
 }
 
-export default Graphs
+export default Graphs;
 
 

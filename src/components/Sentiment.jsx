@@ -46,66 +46,86 @@ const holdPercent = total ? (hold / total) * 100 : 0;
                 
                 </div> */}
                 <SlidingBoxes/>
-                <div className="mt-6">
-          <div className="flex space-x-2">
-            <span className="font-medium text-xl opacity-80">
-              Analyst Estimates
-            </span>
-            <img
-              src="https://png.pngtree.com/element_our/20200702/ourlarge/pngtree-cartoon-exclamation-mark-icon-free-button-image_2291932.jpg"
-              className="w-6 h-6 rotate-180 mt-1 opacity-70"
-            />
-          </div>
-        
-          <div className="flex pt-6">
-        
-            <div>
-              <span className="bg-green-50 h-35 w-35 rounded-full flex items-center justify-center font-bold text-green-500 text-3xl">
-                {buyPercent.toFixed(0)}%
-              </span>
-            </div>
-        
-        
-            <div className="w-full">
-              
-        
-              <div className="flex pl-16 opacity-70 pt-4 items-center gap-3">
-                <span>Buy</span>
-                <div
-                    className="h-2 bg-green-600 rounded-sm ml-3" 
-                    style={{ width: `${buyPercent}%` }}
-                  ></div>
-                <span>{buyPercent.toFixed(0)}%</span>
-              </div>
-        
-        
-              <div className="flex pl-16 opacity-70 pt-4 items-center gap-3">
-                <span>Hold</span>
-                <div
-                    className="h-2 bg-gray-400 rounded-sm"
-                    style={{ width: `${holdPercent}%` }}
-                  ></div>
-                <span>{holdPercent.toFixed(0)}%</span>
-              </div>
-        
-        
-              <div className="flex pl-16 opacity-70 pt-4 items-center gap-3">
-                <span>Sell</span>
-                 <div
-                    className="h-2 bg-red-600 rounded-sm ml-3"
-                    style={{ width: `${sellPercent}%` }}
-                  ></div>
-                <span>{sellPercent.toFixed(0)}%</span>
-              </div>
-        
-            </div>
-          </div>
-        </div>
-               
-                           
-                
-            </div>
+<div className="mt-6">
+  <div className="flex items-center gap-2">
+    <span className="font-medium text-xl opacity-80">
+      Analyst Estimates
+    </span>
+
+    <img
+      src="https://png.pngtree.com/element_our/20200702/ourlarge/pngtree-cartoon-exclamation-mark-icon-free-button-image_2291932.jpg"
+      className="w-5 h-5 rotate-180 opacity-70"
+      alt="info"
+    />
+  </div>
+
+  <div className="flex flex-col sm:flex-row items-center gap-6 mt-6">
+
+    {/* Left Circle */}
+    <div className="flex justify-center">
+      <div className="bg-green-50 w-24 h-24 sm:w-28 sm:h-28 rounded-full flex items-center justify-center">
+        <span className="font-bold text-green-600 text-2xl sm:text-3xl">
+          {buyPercent.toFixed(0)}%
+        </span>
+      </div>
     </div>
+
+    {/* Right Bars */}
+    <div className="w-full flex-1 space-y-4">
+
+      {/* Buy */}
+      <div className="flex items-center gap-3">
+        <span className="w-12 text-sm text-gray-600">Buy</span>
+
+        <div className="flex-1 h-2 bg-gray-200 rounded-full overflow-hidden">
+          <div
+            className="h-2 bg-green-600 rounded-full"
+            style={{ width: `${buyPercent}%` }}
+          />
+        </div>
+
+        <span className="w-12 text-right text-sm">
+          {buyPercent.toFixed(0)}%
+        </span>
+      </div>
+
+      {/* Hold */}
+      <div className="flex items-center gap-3">
+        <span className="w-12 text-sm text-gray-600">Hold</span>
+
+        <div className="flex-1 h-2 bg-gray-200 rounded-full overflow-hidden">
+          <div
+            className="h-2 bg-gray-500 rounded-full"
+            style={{ width: `${holdPercent}%` }}
+          />
+        </div>
+
+        <span className="w-12 text-right text-sm">
+          {holdPercent.toFixed(0)}%
+        </span>
+      </div>
+
+      {/* Sell */}
+      <div className="flex items-center gap-3">
+        <span className="w-12 text-sm text-gray-600">Sell</span>
+
+        <div className="flex-1 h-2 bg-gray-200 rounded-full overflow-hidden">
+          <div
+            className="h-2 bg-red-600 rounded-full"
+            style={{ width: `${sellPercent}%` }}
+          />
+        </div>
+
+        <span className="w-12 text-right text-sm">
+          {sellPercent.toFixed(0)}%
+        </span>
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>
+</div>
   )
 }
 

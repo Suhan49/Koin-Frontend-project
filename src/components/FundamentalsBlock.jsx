@@ -1,19 +1,20 @@
-
-
-function FundamentalsBlock( {name,price,className}) {
+function FundamentalsBlock({ name, price }) {
   return (
-    <>
-    <div className={` mt-4  ${className}`}>
-        <span className="opacity-60">{name}</span>
-        <span>{price}</span>
+    <div className="border-b border-gray-300 py-4">
+      <div className="flex justify-between items-start gap-4">
+        <span className="text-gray-500">
+          {name}
+        </span>
+
+        <span className="font-medium text-right break-words max-w-[55%]">
+          {price}
+        </span>
+      </div>
     </div>
-    <div className=" w-83 lg:w-100 h-0.5 opacity-55 m-2 -mx-1 bg-gray-400 rounded-sm"></div>
-    </>
-    
-  )
+  );
 }
 
-export default FundamentalsBlock
+export default FundamentalsBlock;
 
 
 

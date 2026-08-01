@@ -126,36 +126,22 @@
 
 
 
-import Block3 from "./Block3"
-import Sentiment from "./Sentiment"
-// import { useCoin } from "../hooks/usecoin";
-
-
+import Block3 from "./Block3";
+import Sentiment from "./Sentiment";
 
 function Block2() {
-
-        //  const coin = useCoin();
-
-        
-
-
-
   return (
-  <>
-    <Sentiment/>
+    <div className="bg-blue-50 w-full px-4 md:px-6 lg:px-1 py-5">
+      <div className="max-w-7xl mx-auto space-y-5">
+        <Sentiment />
 
-     <div>
-            <Block3/>
-        </div>
-  </>
-
-
-
-
-  )
+        <Block3 />
+      </div>
+    </div>
+  );
 }
 
-export default Block2
+export default Block2;
 
 
 

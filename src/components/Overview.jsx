@@ -140,100 +140,116 @@
 
 
 
-// import FundamentalsBlock from "./FundamentalsBlock"
-import Block2 from "./Block2"
-// import { useCoin } from "../hooks/usecoin";
+import Block2 from "./Block2";
 import Fundamentals from "./Fundamentals";
 
-
-function Overview({ crypto }) {// const coin = useCoin();
-
-
-
-const position = crypto
-  ? Math.min(
-      95,   // instead of 100
-      Math.max(
-        5,   // instead of 0
-        ((crypto.current_price - crypto.low_24h) /
-          (crypto.high_24h - crypto.low_24h)) * 100
+function Overview({ crypto }) {
+  const position = crypto
+    ? Math.min(
+        95,
+        Math.max(
+          5,
+          ((crypto.current_price - crypto.low_24h) /
+            (crypto.high_24h - crypto.low_24h)) *
+            100
+        )
       )
-    )
-  : 0;
+    : 0;
 
   return (
     <>
-        <div className='bg-white  rounded-md mt-8 px-6 pb-18 pt-6' >
-                  <span className="font-medium text-4xl  ">Performance</span>
-                  <div className="flex w-full">
-                    <div className="py-6">
-                    <span className="opacity-75">Today's Low</span>
-                    <div className="py-2 font-medium opacity-75">{crypto ? crypto.low_24h.toLocaleString() : "..."}</div>
-                  </div>
-                  <div >
-                    <div className="relative w-110 lg:w-2xl h-1 opacity-55 mt-12 mx-9  bg-gradient-to-r from-red-500 via-yellow-500 to-green-500 rounded-sm "></div>
-                   <div
-                            className="relative -mt-1 "
-                            style={{ left: `${position}%` }}
-                          >
-                            <img
-                              src="https://static.thenounproject.com/png/2228269-200.png"
-                              className="w-4 -translate-x-1/2"
-                            />
-                            <span className="block text-sm font-medium">
-                              ${crypto ? crypto.current_price.toLocaleString() : "..."}
-                            </span>
-                          </div>
-                  </div>
-                  <div className="py-6 pl-4">
-                    <span className="opacity-75 ">Today's High</span>
-                    <div className="py-2 font-medium opacity-75">{crypto ? crypto.high_24h.toLocaleString() : "..."}</div>
-                  </div>
-                  </div>
-                  {/* <div className=" pl-90 md:pl-150 -mt-22 md:-mt-16 ">
-                    <img src="https://static.thenounproject.com/png/2228269-200.png" className="w-4 mx-7"/>
-                    <span >${crypto ? crypto.current_price.toLocaleString() : "Loading..."}</span>
-                  </div> */}
+      <div className="bg-white rounded-lg mt-6 p-4 md:p-6">
 
-                    {/* <div
-                            className="relative -mt-16 "
-                            style={{ left: `${position}%` }}
-                          >
-                            <img
-                              src="https://static.thenounproject.com/png/2228269-200.png"
-                              className="w-4 -translate-x-1/2"
-                            />
-                            <span className="block text-sm font-medium">
-                              ${crypto ? crypto.current_price.toLocaleString() : "..."}
-                            </span>
-                          </div> */}
+        <h2 className="text-2xl md:text-4xl font-semibold">
+          Performance
+        </h2>
 
-                   <div className="flex w-full">
-                    <div className="py-6">
-                    <span className="opacity-75">52W Low</span>
-                    <div className="py-2 font-medium opacity-75">{crypto ? crypto.atl.toLocaleString() : "..."}</div>
-                  </div>
-                  <div className="w-110 lg:w-2xl h-1 opacity-55 mt-12 mx-14  bg-gradient-to-r from-red-500 via-yellow-500 to-green-500 rounded-sm "></div>
-                  <div className="py-6 pl-4">
-                    <span className="opacity-75">52W High</span>
-                    <div className="py-2 font-medium opacity-75">{crypto ? crypto.ath.toLocaleString() : "..."}</div>
-                  </div>
-                  </div>
+        {/* Today's Low & High */}
 
-                  <Fundamentals crypto={crypto} />
-                </div>
-             <div>
-                 <Block2/>
-               </div>
-              
-               
+        <div className="flex items-end gap-3 mt-8">
+
+          <div className="text-left whitespace-nowrap">
+            <p className="text-gray-500 text-sm">Today's Low</p>
+            <p className="font-semibold">
+              {crypto ? crypto.low_24h.toLocaleString() : "..."}
+            </p>
+          </div>
+
+          <div className="flex-1 px-2">
+
+            <div className="relative">
+
+              <div className="h-2 rounded-full bg-gradient-to-r from-red-500 via-yellow-500 to-green-500 "></div>
+
+              <div
+  className="absolute -top-10"
+  style={{
+    left: `${position}%`,
+    transform: "translateX(-50%)",
+  }}
+>
+  <p className="text-[11px] font-semibold whitespace-nowrap text-center">
+    ${crypto ? crypto.current_price.toLocaleString() : "..."}
+  </p>
+
+  <img
+    src="https://static.thenounproject.com/png/2228269-200.png"
+    className="w-4 mx-auto mt-1"
+    alt=""
+  />
+</div>
+
+            </div>
+
+          </div>
+
+          <div className="text-right whitespace-nowrap">
+            <p className="text-gray-500 text-sm">Today's High</p>
+            <p className="font-semibold">
+              {crypto ? crypto.high_24h.toLocaleString() : "..."}
+            </p>
+          </div>
+
+        </div>
+
+        {/* 52 Week */}
+
+        <div className="flex items-end gap-3 mt-10">
+
+          <div className="text-left whitespace-nowrap">
+            <p className="text-gray-500 text-sm">52W Low</p>
+            <p className="font-semibold">
+              {crypto ? crypto.atl.toLocaleString() : "..."}
+            </p>
+          </div>
+
+          <div className="flex-1 px-2">
+            <div className="h-2 rounded-full bg-gradient-to-r from-red-500 via-yellow-500 to-green-500"></div>
+          </div>
+
+          <div className="text-right whitespace-nowrap">
+            <p className="text-gray-500 text-sm">52W High</p>
+            <p className="font-semibold">
+              {crypto ? crypto.ath.toLocaleString() : "..."}
+            </p>
+          </div>
+
+        </div>
+
+        <div className="mt-10">
+          <Fundamentals crypto={crypto} />
+        </div>
+
+      </div>
+
+      <div className="mt-6">
+        <Block2 />
+      </div>
     </>
-    
-                
-  )
+  );
 }
 
-export default Overview
+export default Overview;
 
 
 
