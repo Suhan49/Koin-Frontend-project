@@ -210,7 +210,7 @@ function Block1() {
       <div className="bg-blue-50 min-h-screen w-full overflow-x-hidden pb-14">
 
         {/* Main Container */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
 
           {/* Breadcrumb */}
           <div className="flex items-center gap-2 py-4 text-sm">
