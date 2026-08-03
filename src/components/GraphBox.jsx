@@ -44,7 +44,7 @@ function GraphBox({
         <GreenBlock value={percentile} />
       </div>
 
-      <div className="text-xl font-bold mt-2">
+      <div className="text-xl font-bold -mt-4">
         ${dollars?.toLocaleString()}
       </div>
 

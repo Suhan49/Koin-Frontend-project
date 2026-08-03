@@ -14,8 +14,15 @@ export default function SingleCoinGraph({
 }) {
   const data = graphData[coinId] || [];
 
+  if (!data.length) {
+    return <div className="h-20 w-full" />;
+  }
+
   return (
-    <div className="w-full h-20">
+    <div
+      className="w-full h-20 min-w-[180px]"
+      style={{ minHeight: "80px" }}
+    >
       <ResponsiveContainer width="100%" height="100%">
         <LineChart data={data}>
           <XAxis hide dataKey="x" />
